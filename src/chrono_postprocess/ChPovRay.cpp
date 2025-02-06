@@ -256,15 +256,11 @@ void ChPovRay::ExportScript(const std::string& filename) {
 
         std::ifstream templatefile(template_filename);
         std::string buffer_template;
-        while (!templatefile.eof()) {
-            char m;
-            try {
-                templatefile >> m;
-            } catch (const std::exception&) {
-            }
-
-            buffer_template += m;
+        std::string line;
+        while (std::getline(templatefile, line)) {
+            buffer_template += line + "\n";  // Manually re-add newline since getline removes it
         }
+
 
         // Do template replacement of [xxxyyyzzz] keywords, if any
         replaceAll(buffer_template, "[xxxyyyzzz]", "blabla");
