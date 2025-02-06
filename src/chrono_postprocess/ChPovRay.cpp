@@ -195,7 +195,7 @@ void ChPovRay::SetShowContacts(bool show,
     }
 }
 
-void ChPovRay::ExportScript(const std::string& filename) {
+void ChPovRay::ExportScript(const std::string& filename, int simulation_frame_cnt) {
     // Regenerate the list of objects that need POV rendering
     UpdateRenderList();
 
