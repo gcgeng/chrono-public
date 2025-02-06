@@ -241,7 +241,7 @@ void ChPovRay::ExportScript(const std::string& filename, int simulation_frame_cn
     ini_file << "Input_File_Name=\"" << out_script_filename << "\"" << std::endl;
     ini_file << "Output_File_Name=\"" << pic_path + "/" + pic_filename << "\"" << std::endl;
     ini_file << "Initial_Frame=0000" << std::endl;
-    ini_file << "Final_Frame=0999" << std::endl;
+    ini_file << "Final_Frame=" << std::setw(4) << std::setfill('0') << simulation_frame_cnt - 1 << std::endl;
     ini_file << "Initial_Clock=0" << std::endl;
     ini_file << "Final_Clock=1" << std::endl;
     ini_file << "Pause_when_Done=Off\n" << std::endl;
